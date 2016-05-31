@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+stopped_containers=$(docker ps -a | grep Exit | awk '{print $1}')
+if [[ $stopped_containers ]]; then
+  docker rm $stopped_containers
+fi
+
+interim_images=$(docker images | grep '<none>' | awk '{print $3}')
+if [[ $interim_images ]]; then
+  docker rmi $interim_images
+fi

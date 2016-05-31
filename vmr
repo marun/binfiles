@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Use for snapshotting vagrant-managed vmware fusion 
+# hosts:
+#
+#  /path/to/vagrant/env/$ vmr snapshot [snapshot name]
+
+vmrun "$1" $(find .vagrant -name '*.vmx') "${*:2}"
