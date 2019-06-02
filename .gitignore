@@ -1,5 +1,6 @@
 dep
 dlv
+kind
 minikube
 oc
 oadm
