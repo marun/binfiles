@@ -1,6 +1,11 @@
+crc
 dep
 dlv
+glide
+golangci-lint
 kind
+kubectl
 minikube
 oc
 oadm
+openshift-tests
