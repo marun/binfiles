@@ -9,6 +9,7 @@
 # requests to the cluster and will return an internal aws address for
 # the api endpoint.
 
-TARGET="${1:-openshift-apiserver-operator}"
+TARGET="${1}"
+DEBUG="${2}"
 
-KUBECONFIG=/opt/src/os-installer/auth/kubeconfig telepresence --namespace="${TARGET}" --swap-deployment "${TARGET}" --mount=/tmp/tel_root --run run-cmd.sh "${TARGET}"
+KUBECONFIG=/opt/src/os-installer/auth/kubeconfig telepresence --namespace="${TARGET}" --swap-deployment "${TARGET}" --mount=/tmp/tel_root --run run-cmd.sh "${TARGET}" "${DEBUG}"

@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 
 TARGET="${1}"
+DEBUG="${2}"
 
 # Delete the leader election lock to ensure that the local process
 # becomes the leader as quickly as possible.
-oc delete configmap "${TARGET}-lock" --namespace "${TARGET}"
+oc delete configmap "${TARGET}-lock" --namespace "${TARGET}" --ignore-not-found=true
 
-cd "/opt/src/oso/src/github.com/openshift/cluster-${TARGET}/cmd/cluster-${TARGET}"
+cd "/opt/src/os/src/github.com/openshift/cluster-${TARGET}/cmd/cluster-${TARGET}"
 
-#go run main.go operator --config=/var/run/configmaps/config/config.yaml
-dlv debug -- operator --config=/var/run/configmaps/config/config.yaml
+if [[ "${DEBUG}" ]]; then
+  dlv debug -- operator --config=/var/run/configmaps/config/config.yaml
+else
+  go run main.go operator --config=/var/run/configmaps/config/config.yaml
+fi
