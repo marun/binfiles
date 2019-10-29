@@ -1,5 +1,11 @@
 crc
+ctags
 dep
+ebrowse
+emacs
+emacs-26.3
+emacsclient
+etags
 dlv
 glide
 golangci-lint
