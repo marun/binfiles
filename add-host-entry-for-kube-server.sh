@@ -16,7 +16,7 @@ if [[ "${KUBECONFIG}" == "" ]]; then
   exit 1
 fi
 
-SERVER_HOST="$(grep server "${KUBECONFIG}" | sed -e 's+    server: https://\(.*\):6443+\1+')"
+SERVER_HOST="$(grep server "${KUBECONFIG}" | sed -e 's+    server: https://\(.*\):.*+\1+')"
 SERVER_IP="$(dig "${SERVER_HOST}" +short | head -n 1)"
 ENTRY="${SERVER_IP} ${SERVER_HOST}"
 if ! grep "${ENTRY}" /etc/hosts > /dev/null; then
