@@ -14,4 +14,7 @@ kubectl
 minikube
 oc
 oadm
+openshift-install
 openshift-tests
+telepresence
+vagrant
