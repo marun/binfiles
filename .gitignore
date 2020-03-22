@@ -3,10 +3,11 @@ ctags
 dep
 ebrowse
 emacs
-emacs-26.3
+emacs-27.0.90
 emacsclient
 etags
 dlv
+gimme
 glide
 golangci-lint
 kind
