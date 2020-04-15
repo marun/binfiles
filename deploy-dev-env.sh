@@ -7,7 +7,7 @@ set -o nounset
 set -o pipefail
 
 # Enable password-less sudo
-echo 'maru ALL=(ALL) NOPASSWD: ALL' >> ./maru
+echo -e 'maru ALL=(ALL) NOPASSWD: ALL\nDefaults    env_keep += "SSH_AUTH_SOCK"' >> ./maru
 sudo chown root:root ./maru
 sudo mv ./maru /etc/sudoers.d/
 
