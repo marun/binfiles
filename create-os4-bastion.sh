@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-PROFILE="${3:-openshift-dev}"
+PROFILE="${PROFILE:-openshift-dev}"
 
 METADATA_FILE="${METADATA_FILE:-${PWD}/metadata.json}"
 echo "Using metadata file ${METADATA_FILE}"
@@ -60,7 +60,7 @@ INSTANCE_ID="$( ${EC2_CMD} run-instances\
  --image-id="${IMAGE_ID}"\
  --count=1\
  --instance-type=t2.micro\
- --key-name=bastion\
+ --key-name=marun-dev\
  --security-group-ids="${SG_ID}"\
  --subnet-id="${SUBNET_ID}"\
  --associate-public-ip-address\
@@ -82,7 +82,5 @@ done
 
 echo "Bastion is starting..."
 echo ""
-echo "  start_ssh_agent"
-echo "  ssh-add ~/.ssh/openshift-dev.pem"
-echo "  ssh -A centos@${BASTION_IP}"
+echo "  ssh -i marun-dev.pem -A centos@${BASTION_IP}"
 echo ""
