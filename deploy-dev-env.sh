@@ -114,13 +114,13 @@ sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
 sudo systemctl enable docker
 
 # Install kind
-curl -Lo ~/bin/kind https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-linux-amd64
+curl -Lo ~/bin/kind https://github.com/kubernetes-sigs/kind/releases/download/v0.9.0/kind-linux-amd64
 chmod +x ~/bin/kind
 
 mkdir ~/install
 pushd ~/install > /dev/null
   # Install oc
-  curl -LO https://mirror.openshift.com/pub/openshift-v4/clients/ocp-dev-preview/latest-4.4/openshift-client-linux.tar.gz
+  curl -LO https://mirror.openshift.com/pub/openshift-v4/clients/ocp-dev-preview/latest-4.7/openshift-client-linux.tar.gz
   tar xf openshift-client-linux.tar.gz
   mv kubectl oc ~/bin
 popd > /dev/null
