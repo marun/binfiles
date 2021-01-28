@@ -55,6 +55,7 @@ sudo dnf -y install\
  procps\
  python-devel\
  python-pip\
+ ripgrep\
  rsync\
  screen\
  sshfs\
@@ -122,10 +123,6 @@ pushd ~/install > /dev/null
   curl -LO https://mirror.openshift.com/pub/openshift-v4/clients/ocp-dev-preview/latest-4.4/openshift-client-linux.tar.gz
   tar xf openshift-client-linux.tar.gz
   mv kubectl oc ~/bin
-  # Install glide
-  curl -LO https://github.com/Masterminds/glide/releases/download/v0.13.3/glide-v0.13.3-linux-amd64.tar.gz
-  tar xf glide-v0.13.3-linux-amd64.tar.gz
-  mv linux-amd64/glide ~/bin
 popd > /dev/null
 
 echo "Reboot now to ensure a docker-compatible kernel configuration!"
