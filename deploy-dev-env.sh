@@ -62,7 +62,8 @@ sudo dnf -y install\
  stow\
  sysstat\
  texinfo\
- vim-enhanced
+ vim-enhanced\
+ w3m
 
 # Deploy dotfiles and apply with stow
 mkdir ~/src
