@@ -51,6 +51,7 @@ sudo dnf -y install\
  make\
  man\
  man-pages\
+ multimarkdown\
  ncurses-devel\
  procps\
  python-devel\
