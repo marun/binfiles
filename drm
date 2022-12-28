@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-docker stop $1 > /dev/null && docker rm $1 > /dev/null

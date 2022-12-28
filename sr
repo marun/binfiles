@@ -1,7 +1,0 @@
-#!/bin/sh
-if [ "$1" == "" ]; then
-    echo "Must provide a value to search for"
-    exit 1
-fi
-
-perl -p -i -e "s|$1|$2|g" `grep -ril $1 *`
